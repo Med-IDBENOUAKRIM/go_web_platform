@@ -57,3 +57,15 @@ func (c *DefaultConfig) GetFloat(name string) (result float64, found bool) {
 	}
 	return
 }
+
+// page 865
+
+// 279
+
+func (c *DefaultConfig) GetStringDefault(name, val string) (result string) {
+	result, ok := c.GetString(name)
+	if !ok {
+		result = val
+	}
+	return
+}
