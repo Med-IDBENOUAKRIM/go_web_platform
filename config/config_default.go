@@ -81,3 +81,11 @@ func (c *DefaultConfig) GetBoolDefault(name string, val bool) (result bool) {
 	}
 	return
 }
+
+func (c *DefaultConfig) GetFloatDefault(name string, val float64) (result float64) {
+	result, ok := c.GetFloat(name)
+	if !ok {
+		result = val
+	}
+	return
+}
