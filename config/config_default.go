@@ -73,3 +73,11 @@ func (c *DefaultConfig) GetIntDefault(name string, val int) (result int) {
 	}
 	return
 }
+
+func (c *DefaultConfig) GetBoolDefault(name string, val bool) (result bool) {
+	result, ok := c.GetBool(name)
+	if !ok {
+		result = val
+	}
+	return
+}
